@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: 'layout1',
+    home: HomePage(),
+  ));
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            title:
+                Text('Our First Page', style: TextStyle(color: Colors.orange))),
+        body: Center(
+          child: Container(
+            //color: Colors.green,
+            color: Color.fromARGB(150, 44, 12, 232),
+            child: Text(
+              'Flutter Fun',
+              style: TextStyle(color: Colors.white, fontSize: 32),
+              textAlign: TextAlign.center,
+            ),
+            alignment: Alignment(.3, -.1),
+            constraints: BoxConstraints.expand(width: 150, height: 250),
+          ),
+        ));
+  }
+}
