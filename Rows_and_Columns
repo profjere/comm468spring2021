@@ -1,0 +1,75 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: 'layout 3',
+    home: HomePage(),
+  ));
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Many Rows and Columns',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Container(
+                  color: Colors.blue,
+                  height: 200,
+                  width: 50,
+                ),
+                Expanded(
+                  child: Container(
+                    color: Colors.green,
+                    height: 200,
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Container(
+                  color: Colors.orange,
+                  height: 250,
+                  width: 100,
+                ),
+                Expanded(
+                  child: Container(
+                    color: Colors.yellow,
+                    height: 250,
+                  ),
+                ),
+              ],
+            ),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Container(
+                    color: Colors.orange,
+                    height: 250,
+                    width: 100,
+                  ),
+                  Container(
+                    color: Colors.green,
+                    height: 250,
+                    width: 300,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ));
+  }
+}
