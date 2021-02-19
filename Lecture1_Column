@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: 'layout 2',
+    home: HomePage(),
+  ));
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Many Boxes',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              color: Colors.indigoAccent,
+              height: 170,
+            ),
+            Expanded(
+              child: Container(
+                  color: Colors.orange,
+                  child: Center(
+                    child: Text('Come to the Center.',
+                        style: TextStyle(fontSize: 40)),
+                  )),
+            ),
+            Container(
+              color: Colors.lightBlue,
+              height: 100,
+            ),
+          ],
+        ));
+  }
+}
