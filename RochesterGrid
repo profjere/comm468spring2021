@@ -1,0 +1,105 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: 'grid layout',
+    home: HomePage(),
+  ));
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+          backgroundColor: Colors.blueGrey,
+          title: Text("Rochestery", style: TextStyle(color: Colors.white))),
+      backgroundColor: Colors.amberAccent,
+      body: Column(
+        children: <Widget>[
+          Row1(),
+          Row2(),
+          Row3(),
+        ],
+      ),
+    );
+  }
+}
+
+class Row1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              child: Image.asset('assets/images/roc1.jpg'),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              child: Image.asset('assets/images/roc2.jpg'),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class Row2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              child: Image.asset('assets/images/roc3.jpg'),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              child: Image.asset('assets/images/roc4.jpg'),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class Row3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              child: Image.asset('assets/images/roc5.jpg'),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              child: Image.asset('assets/images/roc6.jpg'),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
