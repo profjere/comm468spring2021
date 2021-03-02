@@ -1,0 +1,80 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: 'grid layout',
+    home: HomePage(),
+  ));
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title: Text("Page 1")),
+        body: Center(
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                    child: Padding(
+                  padding: const EdgeInsets.all(38.0),
+                  child: Text('Page 1'),
+                )),
+                Container(
+                    child: Padding(
+                  padding: const EdgeInsets.all(38.0),
+                  child: RaisedButton(
+                    child: Text("Go to Page 2"),
+                    padding: const EdgeInsets.all(10),
+                    textColor: Colors.white,
+                    color: Colors.green,
+                    onPressed: () {
+                      navigateToPage2(context);
+                    },
+                  ),
+                )),
+              ]),
+        ));
+  }
+}
+
+class Page2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title: Text("Page 1")),
+        body: Center(
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                    child: Padding(
+                  padding: const EdgeInsets.all(38.0),
+                  child: Text('Page 2'),
+                )),
+                Container(
+                    child: Padding(
+                  padding: const EdgeInsets.all(38.0),
+                  child: RaisedButton(
+                    child: Text("Go to Page 1"),
+                    padding: const EdgeInsets.all(10),
+                    textColor: Colors.white,
+                    color: Colors.green,
+                    onPressed: () {
+                      navigateToPage1(context);
+                    },
+                  ),
+                )),
+              ]),
+        ));
+  }
+}
+
+Future navigateToPage2(context) async {
+  Navigator.push(context, MaterialPageRoute(builder: (context) => Page2()));
+}
+
+Future navigateToPage1(context) async {
+  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+}
