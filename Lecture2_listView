@@ -1,0 +1,53 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: 'listview',
+    home: HomePage(),
+  ));
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            title: Center(
+                child:
+                    Text('listview', style: TextStyle(color: Colors.white)))),
+        body: Container(
+          child: ListView(
+            children: <Widget>[
+              Card(
+                  child: Padding(
+                      padding: const EdgeInsets.all(11.0),
+                      child: Text('hello'))),
+              Card(
+                  child: Padding(
+                      padding: const EdgeInsets.all(11.0),
+                      child: Text('goodbye'))),
+              Card(
+                  child: Padding(
+                      padding: const EdgeInsets.all(11.0),
+                      child: Text('amen'))),
+            ],
+          ),
+
+          /*child: ListView.builder(
+            itemCount: 5,
+            itemBuilder: (context, position) {
+              return Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(11.0),
+                  child: Text(
+                    position.toString(),
+                    style: TextStyle(fontSize: 22.0),
+                  ),
+                ),
+              );
+            },
+          ),
+          */
+        ));
+  }
+}
