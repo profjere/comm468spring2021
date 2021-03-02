@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: 'cards',
+    home: HomePage(),
+  ));
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
+        height: 420,
+        width: double.maxFinite,
+        child: Card(
+            elevation: 10,
+            child: Column(children: [
+              ListTile(
+                leading: Icon(Icons.add_circle),
+                title: Text('Pizza'),
+                subtitle: Text(
+                  'Cheese or Vegan',
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Text(
+                    'Chooses your preference.',
+                    style: TextStyle(color: Colors.black),
+                  )),
+              ButtonBar(alignment: MainAxisAlignment.center, children: [
+                FlatButton(
+                  textColor: Colors.red,
+                  onPressed: () {},
+                  child: const Text('Cheese'),
+                ),
+                FlatButton(
+                  textColor: Colors.red,
+                  onPressed: () {},
+                  child: const Text('Vegan'),
+                ),
+              ]),
+              Image.asset('assets/images/pizza3.jpg'),
+            ])),
+      ),
+    );
+  }
+}
