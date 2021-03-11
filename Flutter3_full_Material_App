@@ -88,8 +88,11 @@ class HomePage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 25.0, 0),
                     child: RaisedButton(
-                      child: Text("Click Here", style: TextStyle(fontSize: 20)),
-                    ),
+                        child:
+                            Text("Click Here", style: TextStyle(fontSize: 20)),
+                        textColor: Colors.white,
+                        color: Colors.green,
+                        onPressed: () {}),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(45.0),
