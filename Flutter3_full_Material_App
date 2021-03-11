@@ -1,0 +1,105 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: 'buttons',
+    home: HomePage(),
+  ));
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            backgroundColor: Colors.amber,
+            title: Text("Add One"),
+            actions: <Widget>[
+              IconButton(
+                  icon: const Icon(Icons.add_circle),
+                  tooltip: 'Show Reward',
+                  onPressed: () {
+                    //
+                  })
+            ]),
+        bottomNavigationBar: BottomNavigationBar(items: [
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.home),
+            title: new Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.mail),
+            title: new Text('Messages'),
+          ),
+        ]),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: const <Widget>[
+              //side menu
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.yellow,
+                ),
+                child: Text(
+                  'Menu',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.gamepad),
+                title: Text('Messages'),
+              ),
+              ListTile(
+                leading: Icon(Icons.account_circle),
+                title: Text('Profile'),
+              ),
+              ListTile(
+                leading: Icon(Icons.image),
+                title: Text('Important Images'),
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text('Settings'),
+              ),
+            ],
+          ),
+        ),
+        body: ConstrainedBox(
+          constraints: const BoxConstraints(
+            maxWidth: 440,
+            maxHeight: 350,
+          ),
+          child: Container(
+            child: Center(
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 90, 0, 0),
+                    child: Text(
+                      'Choices',
+                      style: TextStyle(fontSize: 48),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 25.0, 0),
+                    child: RaisedButton(
+                      child: Text("Click Here", style: TextStyle(fontSize: 20)),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(45.0),
+                    child: TextField(
+                      decoration:
+                          InputDecoration(hintText: 'Enter a search term'),
+                    ),
+                  ),
+                ])),
+          ),
+        ));
+  }
+}
