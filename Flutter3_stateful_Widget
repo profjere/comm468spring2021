@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  var _counter = 0;
+
+  void multiply5() {
+    setState(() {
+      _counter = _counter + 5;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: Scaffold(
+          appBar: AppBar(title: Text("Multiple Y 5")),
+          body: Container(
+            child: Center(
+                child:
+                    Text("Total: $_counter", style: TextStyle(fontSize: 60))),
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: multiply5,
+            child: Icon(Icons.add),
+          ),
+        ));
+  }
+}
