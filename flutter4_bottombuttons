@@ -1,0 +1,58 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(home: MyApp()));
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  //int _selectedTabIndex = 0;
+  var _pages = "No";
+
+  _changeIndex(int index) {
+    setState(() {
+      int _selectedTabIndex = index;
+      switch (_selectedTabIndex) {
+        case 0:
+          {
+            _pages = 'Home';
+          }
+          break;
+
+        case 1:
+          {
+            _pages = 'Search';
+          }
+          break;
+
+        case 2:
+          {
+            _pages = 'Account';
+          }
+          break;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+          title: Text("codesundar"), backgroundColor: Colors.lightBlue[900]),
+      body: Center(child: Text(_pages)),
+      bottomNavigationBar: BottomNavigationBar(
+        //currentIndex: _selectedTabIndex,
+        onTap: _changeIndex,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.search), title: Text("Search")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle), title: Text("My Account")),
+        ],
+      ),
+    );
+  }
+}
