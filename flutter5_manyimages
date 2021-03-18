@@ -1,0 +1,65 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  List a = [
+    "assets/images/sunrise3.jpg",
+    "assets/images/sunrise2.jpg",
+    "assets/images/sunrise1.jpg",
+    "assets/images/sunrise4.jpg",
+    "assets/images/sunrise5.jpg",
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Displaying Images"),
+      ),
+      body: ListView.builder(
+        itemBuilder: (BuildContext ctx, int index) {
+          return Padding(
+            padding: EdgeInsets.all(20),
+            child: Card(
+              shape: Border.all(
+                width: 5,
+              ),
+              elevation: 20,
+              color: Colors.black,
+              child: Column(
+                children: <Widget>[
+                  Image.asset(a[index]),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Icon(
+                    Icons.favorite,
+                    color: Colors.yellow,
+                    size: 40,
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+        itemCount: a.length,
+      ),
+    );
+  }
+}
